@@ -1,0 +1,137 @@
+/***
+* -- Form fields -- *
+***/
+input[type="date"], 
+input[type="email"], 
+input[type="number"], 
+input[type="password"], 
+input[type="search"], 
+input[type="tel"], 
+input[type="text"], 
+input[type="url"], 
+select, 
+textarea {
+	padding: 0.7rem 1rem;
+	background-clip: padding-box;
+	background-image: none;
+	border: 1px solid var(--uacf7-global-border-color);
+	border-radius: 5px !important;
+	color: var( --wp--preset--color--contrast);
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	outline: none;
+	background-color: var(--wp--preset--color--accent-3);
+	width: 100%;
+	max-width: 100%;
+	font-size: var(--field-font-size);
+	/* padding: var(--field-pad); */
+	box-sizing: border-box;
+	font-weight: var(--field-weight);
+	min-height: 48px;
+  line-height: 1.3;
+	font-family: var(--font);
+  margin-bottom: 24px;
+}
+
+input.wpcf7-file {
+	display: none;
+}
+
+.upload-file {
+	color: var( --wp--preset--color--contrast);
+	padding: 0.7rem 1rem;
+	position: relative;
+	background-color: rgba(179, 39, 90, 0.05);
+	height: 235px;
+	/* background-size: contain; */
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url('data:image/svg+xml,<svg width="83" height="77" viewBox="0 0 83 77" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M41.5892 73.5819V42.0082M41.5892 42.0082L53.8678 54.2869M41.5892 42.0082L29.3105 54.2869" stroke="%23B3275A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M69.6555 58.1715C74.8956 56.1185 80.18 51.4414 80.18 42.0082C80.18 27.9755 68.4862 24.4673 62.6391 24.4673C62.6391 17.4509 62.6391 3.41821 41.59 3.41821C20.5409 3.41821 20.5409 17.4509 20.5409 24.4673C14.6939 24.4673 3 27.9755 3 42.0082C3 51.4414 8.2843 56.1185 13.5245 58.1715" stroke="%23B3275A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+}
+
+.upload-file img {
+	cursor: pointer;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+}
+
+label,
+label span, 
+label span input {
+	color: var(--wp--preset--color--contrast);
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 22.4px;
+}
+
+label span.placeholder {
+	color: var(--wp--preset--color--contrast);
+} 
+
+select {
+	color: rgba(84, 84, 84, 1) !important;
+}
+
+.container-input {
+	display: flex;
+	gap: 24px;
+}
+
+.container-input-footer{
+	display: flex;
+	flex-direction: column;
+	align-items:start;
+}
+
+input[type="submit" i]:disabled {
+	background-color: light-dark(rgba(239, 239, 239, 0.3), rgba(19, 1, 1, 0.3));
+	color: light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
+	border-color: light-dark(rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3));
+}
+
+input[type="submit" i] {
+	background-color: var(--wp--preset--color--base-2);
+	border-radius: 0;
+	border-color: var(--wp--preset--color--base-2);
+	border-width: 1px;
+	border-style: solid;
+	color: var(--wp--preset--color--contrast) !important;
+	padding-top: 8px;
+  padding-right: 24px;
+  padding-bottom: 8px;
+  padding-left: 24px;
+	text-decoration: none;
+	width: 100%;
+}
+
+.submit-container {
+	display: inline-block;
+	position: relative;
+}
+
+/* .submit-container::after {
+    content: '';
+    display: inline-block;
+    width: 58px;
+    height: 45px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+		background-image: url('data:image/svg+xml,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 58 46" style="enable-background:new 0 0 58 46;" xml:space="preserve"><style type="text/css">.st0{fill:%23D27F9C;}.st1{fill:none;}.st2{fill:%23FFFFFF;}.st3{fill:none;stroke:%23FFFFFF;stroke-miterlimit:10;}</style><path class="st0" d="M35.4,0.3c-9.5,0-17.5,5.9-20.8,14.3c0.2,0,0.3,0,0.5,0c0.1,0,0.3,0,0.4,0c2.7-4,7.2-6.7,12.3-6.7c8.2,0,14.8,6.7,14.8,14.9c0,8.2-6.6,14.9-14.8,14.9c-5.2,0-9.7-2.7-12.3-6.7c-0.1,0-0.3,0-0.4,0c-0.2,0-0.3,0-0.5,0c3.3,8.4,11.3,14.3,20.8,14.3c12.3,0,22.3-10.1,22.3-22.5S47.8,0.3,35.4,0.3"/><path class="st1" d="M15.6,14.6c4.1,0.2,7.4,3.4,7.7,7.5C22.9,18,19.6,14.8,15.6,14.6z M23.3,22.1C23.3,22.1,23.3,22.1,23.3,22.1C23.3,22.1,23.3,22.1,23.3,22.1z M23.3,22.1C23.3,22.1,23.3,22.1,23.3,22.1C23.3,22.1,23.3,22.1,23.3,22.1z M23.3,22.2C23.3,22.2,23.3,22.2,23.3,22.2C23.3,22.2,23.3,22.2,23.3,22.2z M23.3,22.2C23.3,22.2,23.3,22.2,23.3,22.2C23.3,22.2,23.3,22.2,23.3,22.2z M23.3,22.6C23.3,22.6,23.3,22.6,23.3,22.6C23.3,22.6,23.3,22.6,23.3,22.6z M23.3,23C23.3,23,23.3,23,23.3,23C23.3,23,23.3,23,23.3,23z M23.3,23.2C23.3,23.2,23.3,23.2,23.3,23.2C23.3,23.2,23.3,23.2,23.3,23.2z M23.3,23.3C23.3,23.3,23.3,23.3,23.3,23.3C23.3,23.3,23.3,23.3,23.3,23.3z M23.3,23.3C23.3,23.3,23.3,23.4,23.3,23.3C23.3,23.4,23.3,23.4,23.3,23.3z M23.3,23.4C23.3,23.4,23.3,23.4,23.3,23.4C23.3,23.4,23.3,23.4,23.3,23.4z M23.3,23.4C23.3,23.4,23.3,23.4,23.3,23.4C23.3,23.4,23.3,23.4,23.3,23.4z M23.3,23.5c-0.3,4.1-3.6,7.3-7.7,7.6C19.7,30.8,23,27.5,23.3,23.5z"/><path class="st2" d="M27.9,7.9c-5.2,0-9.7,2.7-12.3,6.7c4.1,0.2,7.4,3.4,7.7,7.5c0,0,0,0,0,0v0v0c0,0,0,0,0,0v0v0v0v0v0c0,0,0,0,0,0v0v0c0,0,0,0,0,0v0v0v0v0v0v0v0v0v0c0,0,0,0,0,0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0v0c0,0,0,0,0,0v0v0v0v0v0v0v0c0,0,0,0,0,0v0v0v0v0v0v0v0v0v0c0,0,0,0,0,0v0v0c0,0,0,0,0,0v0v0c0,0,0,0,0,0v0c-0.3,4.1-3.6,7.3-7.7,7.6c2.7,4,7.2,6.7,12.3,6.7c8.2,0,14.8-6.7,14.8-14.9C42.7,14.6,36.1,7.9,27.9,7.9"/><path class="st3" d="M13.5,23.4L7,29.9 M13.5,23.4L7,17 M13.5,23.4H0"/></svg>');
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+} */
+
+input[type="checkbox" i] {
+	background-color: rgba(179, 39, 90, 0.05);
+	border-width: 1px;
+	border-style: inset;
+	border-color: var(--wp--preset--color--base-2);
+	width: 18px;
+	height: 18px;
+}
