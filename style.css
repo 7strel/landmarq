@@ -16,7 +16,7 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 
 @import url('assets/css/werkgebieden.css');
 
-/* @import url('assets/css/navigation.css'); */
+@import url('assets/css/navigation.css');
 
 @import url('assets/css/form.css');
 
@@ -39,3 +39,131 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 .not-visible {
 	display: none;
 }
+
+.gallery {
+  display: flex;
+  overflow-x: auto;
+	scroll-padding: 0 40%;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Para esconder a scrollbar no Firefox */
+  -ms-overflow-style: none; /* Para esconder a scrollbar no IE e Edge */
+	padding-left: .5rem !important;
+}
+
+.gallery::-webkit-scrollbar {
+  display: none; /* Para esconder a scrollbar no Chrome, Safari e Edge */
+}
+
+.wp-block-gallery {
+  display: flex;
+  flex-wrap: nowrap;
+	gap: 10px !important;
+}
+
+.wp-block-gallery .wp-block-image {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  width: 70vw; /* Ajuste conforme necessário */
+  max-width: 600px;
+}
+
+.wp-block-gallery .wp-block-image img {
+  width: 100%;
+  height: auto;
+  /* border-radius: 10px; */
+  object-fit: cover;
+}
+
+
+/***
+* -- Marquee -- *
+***/
+
+/* .container-marquee {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+} */
+
+.marquee-container {
+	width: 100%;
+	/* max-width: 1280px; */
+	overflow: hidden;
+	white-space: nowrap;
+	position: relative;
+	/* -webkit-mask-image: linear-gradient(90deg, transparent, #fff 15%, #fff 85%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #fff 15%, #fff 85%, transparent); */
+}
+
+.marquee-content {
+	/* display: inline-block;
+	overflow: hidden;
+	animation: marquee 10s linear infinite; */
+	display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee-content:hover {
+	animation-play-state: paused;
+}
+
+/* .marquee-content::after { */
+	/* content: '';
+	display: inline-block;
+	white-space: nowrap;
+	margin-right: 20px;  */
+	/* Adjust this to match margin-right of images */
+/* } */
+
+/* .marquee-content::after {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 100%;
+	white-space: nowrap;
+} */
+
+@keyframes marquee {
+	/* 0% { transform: translateX(100%); }
+	100% { transform: translateX(-100%); } */
+	0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* .marquee-content::after {
+	content: attr(data-images); /* Use data attribute to store image HTML 
+	display: inline-block;
+	white-space: nowrap;
+	margin-right: 20px; /* Adjust this to match margin-right of images 
+} */
+
+/* .marquee-content figure.wp-block-image {
+	width: 200px !important;
+	padding: 20px;
+	max-width: 200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+.marquee-content figure.wp-block-image img {
+	max-width: 100%;
+  height: auto;
+  display: block;
+} */
+
+.marquee-content figure.wp-block-image {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  width: 350px !important;
+  max-width: 600px;
+}
+
+
