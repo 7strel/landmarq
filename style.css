@@ -40,6 +40,9 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 	display: none;
 }
 
+/***
+* -- Gallery -- *
+***/
 .gallery {
   display: flex;
   overflow-x: auto;
@@ -166,4 +169,38 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
   max-width: 600px;
 }
 
+/***
+* -- Q watermerk/logo -- *
+***/
 
+.group-feature-image{
+	position: relative;
+}
+
+.group-feature-image figure.wp-block-post-featured-image::before,
+.group-feature-image figure.wp-block-image::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	transform: translate(0%, -50%);
+	background-image: url(assets/images/q-dienst-img.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.group-feature-image figure.wp-block-post-featured-image::before{
+	top: 60%;
+	width: 65%;
+	height: 65%;
+}
+
+.group-feature-image figure.wp-block-image::before {
+	top: 70%;
+	width: 45%;
+	height: 45%;
+}
+
+li.project:nth-child(even) div.wp-block-group div.wp-block-columns {
+	display: flex;
+	flex-direction: row-reverse;
+}

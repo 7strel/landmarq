@@ -1,0 +1,48 @@
+/* werkgebied-container-grid */
+
+.werkgebied-container-grid {
+	margin-left: .5rem !important;
+}
+
+.werkgebied-container-grid > *:hover {
+	background-color: var(--wp--preset--color--base) !important;
+	/* transition: background-color 0.3s ease-in-out; */
+}
+
+.werkgebied-container-grid > *:hover svg,
+.werkgebied-container-grid > *:hover p {
+	color: var(--wp--preset--color--contrast-2);
+	/* transition: color 0.3s ease-in-out; */
+}
+
+@media screen and (max-width: 475px) {
+
+	.wp-container-core-group-is-layout-15 {
+		flex-direction: column;
+	}
+
+	.wp-container-core-group-is-layout-21,
+	.werkgebied-container-grid{
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+	}
+
+	.werkgebied {
+		display: flex;
+		flex-direction: row;
+		gap: 32px;
+		align-items: center;
+    justify-content: flex-start;
+	}
+
+	.werkgebied .wp-block-boldblocks-svg-block {
+		width: 18%;
+	}
+
+	.werkgebied > p {
+		margin-bottom: 0 !important;
+	}
+}
+
+.not-visible {
+	display: none;
+}
