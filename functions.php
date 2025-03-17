@@ -402,6 +402,39 @@ function register_thema_taxonomy() {
 
 add_action( 'init', 'register_thema_taxonomy' );
 
+function register_project_tags_taxonomy() {
+	$labels = array(
+			'name'                       => __( 'Project Tags', 'taxonomy general name', 'landmarq' ),
+			'singular_name'              => __( 'Project Tag', 'taxonomy singular name', 'landmarq' ),
+			'search_items'               => __( 'Search Project Tags', 'landmarq' ),
+			'popular_items'              => __( 'Popular Project Tags', 'landmarq' ),
+			'all_items'                  => __( 'All Project Tags', 'landmarq' ),
+			'edit_item'                  => __( 'Edit Project Tag', 'landmarq' ),
+			'update_item'                => __( 'Update Project Tag', 'landmarq' ),
+			'add_new_item'               => __( 'Add New Project Tag', 'landmarq' ),
+			'new_item_name'              => __( 'New Project Tag Name', 'landmarq' ),
+			'separate_items_with_commas' => __( 'Separate tags with commas', 'landmarq' ),
+			'add_or_remove_items'        => __( 'Add or remove tags', 'landmarq' ),
+			'choose_from_most_used'      => __( 'Choose from the most used tags', 'landmarq' ),
+			'not_found'                  => __( 'No tags found', 'landmarq' ),
+			'menu_name'                  => __( 'Project Tags', 'landmarq' ),
+	);
+
+	$args = array(
+			'hierarchical'      => false,  // Define como uma taxonomia de tags (não hierárquico)
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'project-tag' ),
+			'show_in_rest'      => true,  // Permite edição no Editor de Blocos e FSE
+	);
+
+	register_taxonomy( 'project_tag', array( 'project' ), $args );
+}
+
+add_action( 'init', 'register_project_tags_taxonomy' );
+
 
 // register_nav_menus( array( 'primary' => esc_html__( 'Main-Menu', 'landmarq' ) ) );
 // register_nav_menus( array( 'secondary' => esc_html__( 'Secondary Menu', 'landmarq' ) ) );
