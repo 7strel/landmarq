@@ -204,3 +204,53 @@ li.project:nth-child(even) div.wp-block-group div.wp-block-columns {
 	display: flex;
 	flex-direction: row-reverse;
 }
+
+@media screen and (max-width: 475px) {
+	h2.has-text-align-right,
+	p.has-text-align-right {
+		text-align: left;
+	}
+}
+
+/* .dienst-3d-ontwerpen {
+	position: relative;
+}
+
+.diensten-image-container-3d-ontwerpen figure img:hover{
+	position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+	background-image: url(https://landmarq.local/wp-content/uploads/2025/03/diensten_3d-ontwerpen_hover.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+} */
+
+.dienst-visualiseren,
+.dienst-3d-ontwerpen {
+	position: relative;
+}
+
+.diensten-image-container-3d-ontwerpen,
+.diensten-image-container-visualiseren {
+	position: relative;
+	display: inline-block;
+}
+
+.diensten-image-container-3d-ontwerpen .hover-image,
+.diensten-image-container-visualiseren .hover-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.diensten-image-container-3d-ontwerpen:hover .hover-image,
+.diensten-image-container-visualiseren:hover .hover-image {
+	opacity: 1;
+}

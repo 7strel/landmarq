@@ -58,7 +58,12 @@
 }
 
 
-
+@media screen and (max-width: 475px) {
+	.navbar div {
+		padding-left: 10px !important;
+	}
+	
+}
 
 @media ( min-width: 1000px ) {
 	.wp-block-navigation__responsive-container-open:not(.always-shown) {
