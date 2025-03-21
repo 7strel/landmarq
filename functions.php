@@ -39,13 +39,6 @@ add_action( 'admin_init', 'landmarq_enqueue_block_editor_assets' );
 
 function landmarq_enqueue_styles() {
 	wp_enqueue_style( 'landmarq_style', get_stylesheet_uri() );
-
-	//Swiper's CSS
-  wp_enqueue_style ( 'swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' );
-
-	//Slick CSS
-	wp_enqueue_style ( 'slick-style', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' );
-
 }
 add_action( 'wp_enqueue_scripts', 'landmarq_enqueue_styles' );
 
@@ -53,9 +46,6 @@ add_action( 'wp_enqueue_scripts', 'landmarq_enqueue_styles' );
 function landmarq_name_scripts() {
 	//wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/example.js', array(), '1.0.0', true );
 	 // Enqueue my scripts.
-	 wp_enqueue_script( 'swiper-script', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true );
-	 wp_enqueue_script( 'slick-script', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array(), null, true );
-	 wp_enqueue_script( 'anime-script', 'https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js', array(), null, true );
 	 wp_enqueue_script( 'script-name', get_template_directory_uri() . '/assets/js/script.js', array(), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'landmarq_name_scripts' );
@@ -287,19 +277,6 @@ endif;
 
 add_action( 'init', 'landmarq_pattern_categories' );
 
-
-// function example_enqueue_block_variations() {
-// 	wp_enqueue_script(
-// 		'example-enqueue-block-variations',
-// 		get_template_directory_uri() . '/assets/js/variations.js',
-// 		array( 'wp-blocks', 'wp-dom-ready', 'wp-element', 'wp-primitives' ),
-// 		wp_get_theme()->get( 'Version' ),
-// 		false
-// 	);
-// }
-// add_action( 'enqueue_block_editor_assets', 'example_enqueue_block_variations' );
-
-
 /**
  * //////////////
  * 
@@ -435,21 +412,6 @@ function register_project_tags_taxonomy() {
 
 add_action( 'init', 'register_project_tags_taxonomy' );
 
-
-// register_nav_menus( array( 'primary' => esc_html__( 'Main-Menu', 'landmarq' ) ) );
-// register_nav_menus( array( 'secondary' => esc_html__( 'Secondary Menu', 'landmarq' ) ) );
-// register_nav_menus( array( 'copyright' => esc_html__( 'Footer Menu', 'landmarq' ) ) );
-
-// function add_custom_wp_navigation_submenu() {
-// 	add_submenu_page(
-// 			'themes.php',                    // Parent slug (Appearance menu)
-// 			'Navigation Menus',              // Page title
-// 			'Navigation Menus',              // Submenu title
-// 			'manage_options',                // Capability
-// 			'edit.php?post_type=wp_navigation' // Menu slug (the URL)
-// 	);
-// }
-// add_action('admin_menu', 'add_custom_wp_navigation_submenu');
 
 function add_custom_wp_navigation_menu() {
 	add_menu_page(
